@@ -20,16 +20,19 @@ export default function Home() {
           <AnimatedLogo showText size={45} />
           
           <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-muted-foreground">
-            <a href="#" className="hover:text-primary transition-colors">Vision</a>
-            <a href="#" className="hover:text-primary transition-colors">Solutions</a>
-            <a href="#" className="hover:text-primary transition-colors">Founder</a>
-            <a href="#" className="hover:text-primary transition-colors">Team</a>
-            <a href="#" className="hover:text-primary transition-colors">Contact</a>
+            <a href="#vision" className="hover:text-primary transition-colors">Vision</a>
+            <a href="#solutions" className="hover:text-primary transition-colors">Solutions</a>
+            <a href="#founder" className="hover:text-primary transition-colors">Founder</a>
+            <a href="#team" className="hover:text-primary transition-colors">Team</a>
+            <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
           </div>
 
-          <button className="px-6 py-2 rounded-full border border-primary/50 text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+          <a 
+            href="#contact"
+            className="px-6 py-2 rounded-full border border-primary/50 text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+          >
             Book Demo
-          </button>
+          </a>
         </div>
       </nav>
 

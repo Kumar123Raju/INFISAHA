@@ -29,7 +29,7 @@ const showcaseItems = [
 
 export const AiShowcase = () => {
   return (
-    <section className="py-24 bg-background/50 relative overflow-hidden">
+    <section id="vision" className="py-24 bg-background/50 relative overflow-hidden scroll-mt-20">
       <div className="container px-4 mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <SectionReveal className="w-full lg:w-1/2" direction="right">
@@ -41,7 +41,7 @@ export const AiShowcase = () => {
               <span className="text-secondary glow-mint">Efficiency through AI</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-              Static websites are a thing of the past. FutureForge AI upgrades your digital presence into a proactive asset that communicates, analyzes, and executes without manual intervention.
+              Static websites are a thing of the past. INFISAHA AI upgrades your digital presence into a proactive asset that communicates, analyzes, and executes without manual intervention.
             </p>
 
             <div className="grid gap-6">
@@ -82,7 +82,7 @@ export const AiShowcase = () => {
                       <Bot className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h5 className="font-bold text-sm">FutureForge AI Assistant</h5>
+                      <h5 className="font-bold text-sm">INFISAHA AI Assistant</h5>
                       <span className="text-[10px] text-primary flex items-center gap-1">
                         <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
                         Active Now

@@ -29,7 +29,7 @@ const teamMembers = [
 
 export const Team = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="team" className="py-24 relative overflow-hidden scroll-mt-20">
       <div className="container px-4 mx-auto">
         <SectionReveal className="text-center mb-16">
           <Badge variant="outline" className="mb-4 text-primary border-primary/20 px-4 py-1 rounded-full uppercase tracking-widest text-[10px] font-bold">

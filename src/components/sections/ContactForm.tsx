@@ -28,7 +28,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <section className="py-24 relative bg-background/50">
+    <section id="contact" className="py-24 relative bg-background/50 scroll-mt-20">
       <div className="container px-4 mx-auto">
         <div className="max-w-5xl mx-auto glass rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row border-white/10">
           <div className="w-full md:w-2/5 bg-primary p-12 text-primary-foreground relative overflow-hidden">
@@ -43,13 +43,13 @@ export const ContactForm = () => {
                   <div className="p-3 rounded-full bg-white/10 group-hover:bg-white/20 transition-colors">
                     <Mail className="w-5 h-5" />
                   </div>
-                  <span>hello@futureforge.ai</span>
+                  <span>hello@infisaha.com</span>
                 </div>
                 <div className="flex items-center gap-4 group cursor-pointer">
                   <div className="p-3 rounded-full bg-white/10 group-hover:bg-white/20 transition-colors">
                     <Phone className="w-5 h-5" />
                   </div>
-                  <span>+1 (555) AI-READY</span>
+                  <span>+1 (555) INF-ISAH</span>
                 </div>
                 <div className="flex items-center gap-4 group cursor-pointer">
                   <div className="p-3 rounded-full bg-white/10 group-hover:bg-white/20 transition-colors">

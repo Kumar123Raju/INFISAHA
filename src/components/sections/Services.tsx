@@ -35,7 +35,7 @@ const services = [
 
 export const Services = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="solutions" className="py-24 relative overflow-hidden scroll-mt-20">
       <div className="container px-4 mx-auto">
         <SectionReveal className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-headline">Core Services</h2>

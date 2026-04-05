@@ -12,7 +12,7 @@ export const Founder = () => {
   const founderImg = PlaceHolderImages.find(img => img.id === 'founder-photo');
 
   return (
-    <section className="py-24 relative overflow-hidden bg-background/30">
+    <section id="founder" className="py-24 relative overflow-hidden bg-background/30 scroll-mt-20">
       <div className="container px-4 mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <SectionReveal className="w-full lg:w-1/2 relative" direction="right">
