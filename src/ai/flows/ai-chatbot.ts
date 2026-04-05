@@ -1,7 +1,6 @@
-
 'use server';
 /**
- * @fileOverview An AI chatbot flow that provides information about INFISAHA's services and offerings.
+ * @fileOverview An advanced AI chatbot flow that provides information about INFISAHA's services and handles lead qualification.
  */
 
 import {ai} from '@/ai/genkit';
@@ -10,36 +9,54 @@ import {z} from 'genkit';
 const AiChatbotInputSchema = z
   .object({
     question: z.string().describe("The user's question about INFISAHA."),
+    history: z.array(z.object({
+      role: z.enum(['user', 'model']),
+      content: z.string()
+    })).optional().describe("Previous conversation history for context."),
   })
-  .describe("Input for the INFISAHA chatbot, containing the user's question.");
+  .describe("Input for the INFISAHA chatbot, containing the user's question and history.");
 export type AiChatbotInput = z.infer<typeof AiChatbotInputSchema>;
 
 const AiChatbotOutputSchema = z
   .object({
     answer: z.string().describe("The AI chatbot's answer to the user's question."),
+    requiresLeadCapture: z.boolean().optional().describe("Whether the AI believes a human expert should now step in."),
+    suggestedAction: z.enum(['book_demo', 'contact_expert', 'view_portfolio', 'none']).optional().describe("A suggested next step for the user."),
   })
-  .describe("Output from the INFISAHA chatbot, containing the AI's response.");
+  .describe("Output from the INFISAHA chatbot, containing the AI's response and structured metadata.");
 export type AiChatbotOutput = z.infer<typeof AiChatbotOutputSchema>;
 
 const prompt = ai.definePrompt({
   name: 'infisahaChatbotPrompt',
   input: {schema: AiChatbotInputSchema},
   output: {schema: AiChatbotOutputSchema},
-  system: `You are the INFISAHA Assistant, a futuristic and helpful AI for a company specializing in AI implementation, automation, and modern web development.
+  system: `You are the INFISAHA Strategic Consultant, a premium AI assistant for a high-end AI implementation and automation firm.
 
-INFISAHA represents infinite support, trust, and reliability. The company's vision is to help businesses transform from static systems into dynamic, automated, and AI-driven platforms that improve efficiency and ROI.
-
-Core services:
-1. AI Implementation: Integrating custom AI solutions.
-2. Automation Systems: Intelligent workflows.
-3. Modern Web Development: High-performance, responsive apps.
-4. Static to Dynamic Upgrade: Transforming websites into automated platforms.
-
+INFISAHA represents: Infinite Support, Trust, and Reliability.
 Founder: Raju Kumar (Software Engineer, MCA from NIT Jamshedpur).
-Vision: Creating intelligent systems that businesses can trust.
 
-Your goal is to answer questions about INFISAHA's services, build trust, and attract clients. Be informative, concise, professional, and approachable.`,
-  prompt: `User's question: {{{question}}}
+YOUR GOALS:
+1. Educate: Explain how our AI/Automation transforms "Static Businesses" into "Dynamic ROI Engines".
+2. Consult: Don't just answer; provide strategic value.
+3. Convert: If the user seems interested in a specific service (Website upgrade, AI implementation, etc.), guide them toward booking a demo or talking to an expert.
+
+CORE SERVICES:
+- AI Implementation: Custom LLM/Neural Network integration.
+- Website to Automation: Turning static sites into self-managing systems.
+- Custom Software: High-performance Next.js/Cloud architectures.
+- Dashboards: Actionable AI-driven insights.
+
+PERSONALITY:
+Futuristic, professional, concise, and helpful. Use terms like "Infinite Support" and "Intelligent Systems".
+
+LEAD CAPTURE TRIGGER:
+If a user asks about pricing, custom projects, or "talking to someone", set requiresLeadCapture to true and suggestedAction to 'contact_expert'.`,
+  prompt: `History:
+{{#each history}}
+{{role}}: {{{content}}}
+{{/each}}
+
+User's question: {{{question}}}
 
 AI's answer:`,
 });
