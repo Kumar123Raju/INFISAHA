@@ -1,8 +1,10 @@
 
 "use client";
 
+import { motion } from "framer-motion";
 import { Monitor, Cpu, Code2, BarChart3, ChevronRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
+import { SectionReveal } from "@/components/ui/section-reveal";
 
 const services = [
   {
@@ -33,45 +35,61 @@ const services = [
 
 export const Services = () => {
   return (
-    <section className="py-24 relative">
+    <section className="py-24 relative overflow-hidden">
       <div className="container px-4 mx-auto">
-        <div className="text-center mb-16">
+        <SectionReveal className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-headline">Core Services</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Everything you need to future-proof your business operations with the latest in artificial intelligence and modern web engineering.
           </p>
-        </div>
+        </SectionReveal>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="glass border-white/5 hover:border-primary/30 transition-all duration-500 group relative overflow-hidden flex flex-col">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-primary/20 transition-all"></div>
-              
-              <CardHeader>
-                <div className="mb-4 group-hover:scale-110 transition-transform duration-500">{service.icon}</div>
-                <CardTitle className="text-xl font-bold mb-2 font-headline group-hover:text-primary transition-colors">{service.title}</CardTitle>
-                <CardDescription className="text-muted-foreground text-sm line-clamp-3 leading-relaxed">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
-              
-              <CardContent className="flex-grow">
-                <ul className="space-y-2 mt-2">
-                  {service.features.map((feat, i) => (
-                    <li key={i} className="text-xs flex items-center gap-2 text-muted-foreground">
-                      <div className="w-1 h-1 bg-primary rounded-full"></div>
-                      {feat}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
+            <SectionReveal key={index} delay={index * 0.1}>
+              <motion.div
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="h-full"
+              >
+                <Card className="glass border-white/5 hover:border-primary/50 transition-colors duration-500 group relative overflow-hidden flex flex-col h-full glow-border hover:shadow-[0_0_30px_rgba(0,199,255,0.15)]">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-primary/20 transition-all"></div>
+                  
+                  <CardHeader>
+                    <motion.div 
+                      whileHover={{ rotate: 10, scale: 1.1 }}
+                      className="mb-4 w-fit"
+                    >
+                      {service.icon}
+                    </motion.div>
+                    <CardTitle className="text-xl font-bold mb-2 font-headline group-hover:text-primary transition-colors">{service.title}</CardTitle>
+                    <CardDescription className="text-muted-foreground text-sm line-clamp-3 leading-relaxed">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  
+                  <CardContent className="flex-grow">
+                    <ul className="space-y-2 mt-2">
+                      {service.features.map((feat, i) => (
+                        <li key={i} className="text-xs flex items-center gap-2 text-muted-foreground">
+                          <motion.div 
+                            animate={{ scale: [1, 1.2, 1] }}
+                            transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
+                            className="w-1 h-1 bg-primary rounded-full"
+                          />
+                          {feat}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
 
-              <CardFooter className="pt-0">
-                <button className="text-xs font-bold uppercase tracking-wider text-primary flex items-center gap-1 group-hover:gap-2 transition-all">
-                  Learn More <ChevronRight className="w-3 h-3" />
-                </button>
-              </CardFooter>
-            </Card>
+                  <CardFooter className="pt-0">
+                    <button className="text-xs font-bold uppercase tracking-wider text-primary flex items-center gap-1 group-hover:gap-2 transition-all">
+                      Learn More <ChevronRight className="w-3 h-3" />
+                    </button>
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            </SectionReveal>
           ))}
         </div>
       </div>

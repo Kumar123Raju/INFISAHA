@@ -5,26 +5,26 @@
 
 @layer base {
   :root {
-    --background: 190 25% 6%;
+    --background: 190 25% 4%;
     --foreground: 180 20% 98%;
-    --card: 190 25% 8%;
+    --card: 190 25% 6%;
     --card-foreground: 180 20% 98%;
-    --popover: 190 25% 6%;
+    --popover: 190 25% 4%;
     --popover-foreground: 180 20% 98%;
-    --primary: 195 100% 50%; /* #00C7FF Cyan-blue */
-    --primary-foreground: 190 25% 6%;
-    --secondary: 165 85% 63%; /* #4DF5CB Mint Green */
-    --secondary-foreground: 190 25% 6%;
-    --muted: 190 20% 15%;
-    --muted-foreground: 180 10% 65%;
+    --primary: 195 100% 50%;
+    --primary-foreground: 190 25% 4%;
+    --secondary: 165 85% 63%;
+    --secondary-foreground: 190 25% 4%;
+    --muted: 190 20% 12%;
+    --muted-foreground: 180 10% 60%;
     --accent: 195 100% 50%;
     --accent-foreground: 180 20% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 190 20% 15%;
-    --input: 190 20% 15%;
+    --border: 190 20% 12%;
+    --input: 190 20% 12%;
     --ring: 195 100% 50%;
-    --radius: 0.75rem;
+    --radius: 1rem;
   }
 }
 
@@ -33,10 +33,10 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground font-body antialiased selection:bg-primary/30;
     background-image: 
-      radial-gradient(circle at 50% 0%, hsla(195, 100%, 50%, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 100% 100%, hsla(165, 85%, 63%, 0.05) 0%, transparent 50%);
+      radial-gradient(circle at 50% 0%, hsla(195, 100%, 50%, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, hsla(165, 85%, 63%, 0.04) 0%, transparent 50%);
     background-attachment: fixed;
   }
   h1, h2, h3, h4, h5, h6 {
@@ -45,17 +45,32 @@
 }
 
 .glass {
-  @apply bg-white/5 backdrop-blur-md border border-white/10;
+  @apply bg-white/[0.03] backdrop-blur-xl border border-white/10;
 }
 
 .glow-cyan {
-  text-shadow: 0 0 10px hsla(195, 100%, 50%, 0.5);
+  text-shadow: 0 0 15px hsla(195, 100%, 50%, 0.6);
 }
 
 .glow-mint {
-  text-shadow: 0 0 10px hsla(165, 85%, 63%, 0.5);
+  text-shadow: 0 0 15px hsla(165, 85%, 63%, 0.6);
 }
 
 .glow-border {
-  box-shadow: 0 0 15px hsla(195, 100%, 50%, 0.2);
+  @apply transition-all duration-500;
+  box-shadow: 0 0 0px hsla(195, 100%, 50%, 0);
+}
+
+.glow-border:hover {
+  box-shadow: 0 0 25px hsla(195, 100%, 50%, 0.15);
+  @apply border-primary/40;
+}
+
+/* Custom Utilities */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

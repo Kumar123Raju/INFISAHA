@@ -1,11 +1,10 @@
 
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { MessageSquare, Zap, LayoutDashboard, Database, Bot } from "lucide-react";
-import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { SectionReveal } from "@/components/ui/section-reveal";
 
 const showcaseItems = [
   {
@@ -29,13 +28,11 @@ const showcaseItems = [
 ];
 
 export const AiShowcase = () => {
-  const automationImage = PlaceHolderImages.find(img => img.id === 'automation-flow');
-
   return (
     <section className="py-24 bg-background/50 relative overflow-hidden">
       <div className="container px-4 mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-16">
-          <div className="w-full lg:w-1/2">
+          <SectionReveal className="w-full lg:w-1/2" direction="right">
             <Badge variant="outline" className="mb-4 text-primary border-primary/20 px-4 py-1 rounded-full">
               Intelligence at Scale
             </Badge>
@@ -49,10 +46,20 @@ export const AiShowcase = () => {
 
             <div className="grid gap-6">
               {showcaseItems.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-4 group">
-                  <div className="mt-1 p-3 rounded-xl glass border-white/5 group-hover:border-primary/50 transition-colors">
+                <motion.div 
+                  key={idx} 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.2 }}
+                  className="flex items-start gap-4 group"
+                >
+                  <motion.div 
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="mt-1 p-3 rounded-xl glass border-white/5 group-hover:border-primary/50 transition-colors"
+                  >
                     {item.icon}
-                  </div>
+                  </motion.div>
                   <div>
                     <div className="flex items-center gap-3 mb-1">
                       <h4 className="font-bold text-lg">{item.title}</h4>
@@ -60,13 +67,13 @@ export const AiShowcase = () => {
                     </div>
                     <p className="text-muted-foreground text-sm">{item.description}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </SectionReveal>
 
-          <div className="w-full lg:w-1/2 relative">
-            <div className="relative glass rounded-3xl p-4 overflow-hidden glow-border">
+          <SectionReveal className="w-full lg:w-1/2 relative" direction="left">
+            <div className="relative glass rounded-3xl p-4 overflow-hidden glow-border shadow-[0_0_50px_rgba(0,199,255,0.1)]">
               {/* Fake Chatbot UI Preview */}
               <div className="bg-background/80 rounded-2xl border border-white/5 p-6 shadow-2xl">
                 <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/5">
@@ -86,24 +93,39 @@ export const AiShowcase = () => {
                 </div>
 
                 <div className="space-y-4 mb-8">
-                  <div className="flex gap-2">
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                    className="flex gap-2"
+                  >
                     <div className="w-8 h-8 rounded-full bg-primary/10 flex-shrink-0"></div>
                     <div className="bg-muted p-3 rounded-2xl rounded-tl-none text-xs max-w-[80%]">
                       Hello! I noticed your booking rates are up 20% this month. Would you like me to automate the follow-up emails?
                     </div>
-                  </div>
-                  <div className="flex gap-2 flex-row-reverse">
+                  </motion.div>
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.5 }}
+                    className="flex gap-2 flex-row-reverse"
+                  >
                     <div className="w-8 h-8 rounded-full bg-secondary/10 flex-shrink-0"></div>
                     <div className="bg-primary/20 p-3 rounded-2xl rounded-tr-none text-xs max-w-[80%]">
                       Yes, please integrate that with our CRM and notify the clinic manager.
                     </div>
-                  </div>
-                  <div className="flex gap-2">
+                  </motion.div>
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.5 }}
+                    className="flex gap-2"
+                  >
                     <div className="w-8 h-8 rounded-full bg-primary/10 flex-shrink-0"></div>
                     <div className="bg-muted p-3 rounded-2xl rounded-tl-none text-xs max-w-[80%] border-l-2 border-primary">
                       Workflow initiated. 45 automated emails scheduled. Manager notified. ⚡
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
 
                 <div className="flex gap-2 items-center p-2 rounded-xl glass border-white/5">
@@ -114,10 +136,17 @@ export const AiShowcase = () => {
                 </div>
               </div>
 
-              {/* Automation Flow Visual */}
-              <div className="absolute -bottom-6 -left-6 w-48 h-48 animate-float opacity-50 blur-2xl bg-secondary/30 rounded-full -z-10"></div>
+              {/* Automation Flow Visual Effect */}
+              <motion.div 
+                animate={{ 
+                  scale: [1, 1.5, 1],
+                  opacity: [0.3, 0.5, 0.3]
+                }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="absolute -bottom-6 -left-6 w-48 h-48 blur-2xl bg-secondary/30 rounded-full -z-10"
+              />
             </div>
-          </div>
+          </SectionReveal>
         </div>
       </div>
     </section>
