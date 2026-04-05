@@ -1,0 +1,29 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Futuristic abstract AI network background",
+      "imageUrl": "https://picsum.photos/seed/futureforge-hero/1920/1080",
+      "imageHint": "futuristic network"
+    },
+    {
+      "id": "clinic-demo",
+      "description": "Modern clinic booking system interface",
+      "imageUrl": "https://picsum.photos/seed/clinic-system/800/600",
+      "imageHint": "medical dashboard"
+    },
+    {
+      "id": "admin-demo",
+      "description": "Sleek AI admin analytics dashboard",
+      "imageUrl": "https://picsum.photos/seed/admin-dashboard/800/600",
+      "imageHint": "data dashboard"
+    },
+    {
+      "id": "automation-flow",
+      "description": "Visual representation of an automation workflow",
+      "imageUrl": "https://picsum.photos/seed/automation-flow/600/400",
+      "imageHint": "workflow automation"
+    }
+  ]
+}
