@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { TypingEffect } from "@/components/ui/typing-effect";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { AnimatedGrid } from "@/components/ui/animated-grid";
+import { AnimatedLogo } from "@/components/AnimatedLogo";
 
 export const Hero = () => {
   return (
@@ -33,10 +34,19 @@ export const Hero = () => {
       </div>
 
       <div className="container relative z-10 px-4 mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center mb-6"
+        >
+          <AnimatedLogo size={80} />
+        </motion.div>
+
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
           className="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-full glass border-primary/20"
         >
           <Sparkles className="w-4 h-4 text-secondary animate-pulse" />
@@ -48,7 +58,7 @@ export const Hero = () => {
         <motion.h1 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
           className="mb-6 text-5xl font-bold leading-tight md:text-7xl lg:text-8xl font-headline"
         >
           <TypingEffect 
@@ -59,7 +69,7 @@ export const Hero = () => {
           <motion.span 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 2 }}
+            transition={{ duration: 1, delay: 2.5 }}
             className="block text-primary glow-cyan mt-2"
           >
             with AI & Automation
@@ -69,7 +79,7 @@ export const Hero = () => {
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.2 }}
+          transition={{ duration: 0.8, delay: 2.8 }}
           className="max-w-2xl mx-auto mb-10 text-lg md:text-xl text-muted-foreground"
         >
           We build systems that work for you 24/7, turning static processes into dynamic ROI-generating engines.
@@ -78,7 +88,7 @@ export const Hero = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.4 }}
+          transition={{ duration: 0.8, delay: 3 }}
           className="flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <Button 
