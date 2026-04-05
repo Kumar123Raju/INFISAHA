@@ -39,24 +39,29 @@ export const ContactForm = () => {
               </p>
 
               <div className="space-y-6 mt-auto">
-                <div className="flex items-center gap-4 group cursor-pointer">
+                <a href="mailto:hello@infisaha.com" className="flex items-center gap-4 group cursor-pointer">
                   <div className="p-3 rounded-full bg-white/10 group-hover:bg-white/20 transition-colors">
                     <Mail className="w-5 h-5" />
                   </div>
                   <span>hello@infisaha.com</span>
-                </div>
-                <div className="flex items-center gap-4 group cursor-pointer">
+                </a>
+                <a href="tel:+918582084483" className="flex items-center gap-4 group cursor-pointer">
                   <div className="p-3 rounded-full bg-white/10 group-hover:bg-white/20 transition-colors">
                     <Phone className="w-5 h-5" />
                   </div>
-                  <span>+1 (555) INF-ISAH</span>
-                </div>
-                <div className="flex items-center gap-4 group cursor-pointer">
+                  <span>+91 8582084483</span>
+                </a>
+                <a 
+                  href="https://wa.me/918582084483" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center gap-4 group cursor-pointer"
+                >
                   <div className="p-3 rounded-full bg-white/10 group-hover:bg-white/20 transition-colors">
                     <MessageCircle className="w-5 h-5" />
                   </div>
                   <span>WhatsApp Chat Available</span>
-                </div>
+                </a>
               </div>
             </div>
             
@@ -79,7 +84,7 @@ export const ContactForm = () => {
               
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone Number</Label>
-                <Input id="phone" type="tel" placeholder="+1 (555) 000-0000" className="bg-white/5 border-white/10 focus:border-primary/50" />
+                <Input id="phone" type="tel" placeholder="+91 8582084483" className="bg-white/5 border-white/10 focus:border-primary/50" />
               </div>
 
               <div className="space-y-2">

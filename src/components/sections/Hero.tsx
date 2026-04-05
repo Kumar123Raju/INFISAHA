@@ -91,23 +91,27 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 3 }}
           className="flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
-          <Button 
-            size="lg" 
-            className="rounded-full px-8 h-12 text-base font-semibold transition-all hover:scale-105 bg-primary text-primary-foreground relative group overflow-hidden"
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              Book a Demo
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </span>
-            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-          </Button>
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="rounded-full px-8 h-12 text-base font-semibold glass border-white/10 hover:bg-white/5 transition-all hover:scale-105"
-          >
-            Our Solutions
-          </Button>
+          <a href="#contact">
+            <Button 
+              size="lg" 
+              className="rounded-full px-8 h-12 text-base font-semibold transition-all hover:scale-105 bg-primary text-primary-foreground relative group overflow-hidden"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Book a Demo
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            </Button>
+          </a>
+          <a href="#solutions">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="rounded-full px-8 h-12 text-base font-semibold glass border-white/10 hover:bg-white/5 transition-all hover:scale-105"
+            >
+              Our Solutions
+            </Button>
+          </a>
         </motion.div>
       </div>
 
