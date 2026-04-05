@@ -45,6 +45,8 @@ export const Portfolio = () => {
         <div className="grid gap-16">
           {demos.map((demo, index) => {
             const imageData = PlaceHolderImages.find(img => img.id === demo.id);
+            const fallbackUrl = `https://picsum.photos/seed/${demo.id}/800/600`;
+            
             return (
               <div key={index} className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 group`}>
                 <SectionReveal className="w-full lg:w-3/5" direction={index % 2 === 1 ? "left" : "right"}>
@@ -54,11 +56,11 @@ export const Portfolio = () => {
                   >
                     <div className="aspect-video relative overflow-hidden">
                       <Image 
-                        src={imageData?.imageUrl || ""} 
+                        src={imageData?.imageUrl || fallbackUrl} 
                         alt={demo.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-1000"
-                        data-ai-hint={imageData?.imageHint}
+                        data-ai-hint={imageData?.imageHint || "tech dashboard"}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
                     </div>
