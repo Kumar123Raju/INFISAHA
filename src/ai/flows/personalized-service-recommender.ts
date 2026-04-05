@@ -1,7 +1,7 @@
 
 'use server';
 /**
- * @fileOverview This file implements a Genkit flow to recommend INFISAHA AI services
+ * @fileOverview This file implements a Genkit flow to recommend INFISAHA services
  * based on a business's needs and challenges.
  *
  * - personalizedServiceRecommender - A function that provides a personalized service recommendation.
@@ -21,8 +21,8 @@ const PersonalizedServiceRecommenderInputSchema = z.object({
 export type PersonalizedServiceRecommenderInput = z.infer<typeof PersonalizedServiceRecommenderInputSchema>;
 
 const PersonalizedServiceRecommenderOutputSchema = z.object({
-  recommendationSummary: z.string().describe('A personalized summary of how INFISAHA AI services can address the business\'s needs.'),
-  relevantServices: z.array(z.string()).describe('A list of specific INFISAHA AI services most relevant to the business.'),
+  recommendationSummary: z.string().describe('A personalized summary of how INFISAHA services can address the business\'s needs.'),
+  relevantServices: z.array(z.string()).describe('A list of specific INFISAHA services most relevant to the business.'),
   estimatedRoiBenefits: z.string().optional().describe('An optional description of potential ROI and benefits.'),
 });
 export type PersonalizedServiceRecommenderOutput = z.infer<typeof PersonalizedServiceRecommenderOutputSchema>;
@@ -35,10 +35,10 @@ const prompt = ai.definePrompt({
   name: 'personalizedServiceRecommenderPrompt',
   input: {schema: PersonalizedServiceRecommenderInputSchema},
   output: {schema: PersonalizedServiceRecommenderOutputSchema},
-  prompt: `You are an expert consultant for INFISAHA AI, a company specializing in AI implementation, automation, and modern web development services.
-Your goal is to analyze a business's details and challenges, and then provide a personalized summary of how INFISAHA AI's services can specifically address their needs and provide significant value.
+  prompt: `You are an expert consultant for INFISAHA, a company specializing in AI implementation, automation, and modern web development services.
+Your goal is to analyze a business's details and challenges, and then provide a personalized summary of how INFISAHA's services can specifically address their needs and provide significant value.
 
-INFISAHA AI offers the following core services:
+INFISAHA offers the following core services:
 - AI Implementation: Building and integrating custom AI solutions (e.g., AI Chatbots, Smart Dashboards).
 - Website to Automation Upgrade: Transforming static websites into dynamic, automated, and AI-driven systems.
 - Custom Software Development: Developing bespoke software solutions tailored to unique business needs.
@@ -50,7 +50,7 @@ Industry: {{{industry}}}
 Current Challenges: {{{currentChallenges}}}
 Business Goals: {{{businessGoals}}}
 
-Based on this, generate a comprehensive recommendation summary and list the most relevant INFISAHA AI services that would benefit this business. Also, if possible, describe the estimated ROI and benefits they could expect.`,
+Based on this, generate a comprehensive recommendation summary and list the most relevant INFISAHA services that would benefit this business. Also, if possible, describe the estimated ROI and benefits they could expect.`,
 });
 
 const personalizedServiceRecommenderFlow = ai.defineFlow(

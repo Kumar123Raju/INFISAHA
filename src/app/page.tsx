@@ -55,7 +55,7 @@ export default function Home() {
             <AnimatedLogo showText size={35} />
             
             <div className="text-sm text-muted-foreground text-center md:text-left">
-              © 2024 INFISAHA Systems. Infinite Support. Intelligent Systems.<br />
+              © 2024 INFISAHA. Infinite Support. Intelligent Systems.<br />
               <span className="text-[10px] uppercase tracking-widest">Built with trust and reliability.</span>
             </div>
 
