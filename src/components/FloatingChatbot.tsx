@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MessageSquare, X, Send, Bot, Sparkles } from "lucide-react";
-import { chatWithFutureForgeAI } from "@/ai/flows/ai-chatbot";
+import { chatWithINFISAHA } from "@/ai/flows/ai-chatbot";
 
 type Message = {
   role: "bot" | "user";
@@ -16,7 +16,7 @@ type Message = {
 export const FloatingChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: "bot", content: "Hi! I'm the FutureForge Assistant. How can I help upgrade your business with AI today?" }
+    { role: "bot", content: "Hi! I'm the INFISAHA Assistant. How can we help upgrade your business with intelligent systems today?" }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +37,7 @@ export const FloatingChatbot = () => {
     setIsLoading(true);
 
     try {
-      const response = await chatWithFutureForgeAI({ question: userMsg });
+      const response = await chatWithINFISAHA({ question: userMsg });
       setMessages(prev => [...prev, { role: "bot", content: response.answer }]);
     } catch (error) {
       setMessages(prev => [...prev, { role: "bot", content: "I'm having a slight technical glitch. Feel free to contact us via the form!" }]);
@@ -62,10 +62,10 @@ export const FloatingChatbot = () => {
                   <Bot className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm">FutureForge AI</h4>
+                  <h4 className="font-bold text-sm">INFISAHA Assistant</h4>
                   <span className="text-[10px] opacity-70 flex items-center gap-1">
                     <span className="w-1.5 h-1.5 bg-secondary rounded-full animate-pulse"></span>
-                    Active Agent
+                    Infinite Support Active
                   </span>
                 </div>
               </div>
@@ -116,7 +116,7 @@ export const FloatingChatbot = () => {
                 </Button>
               </div>
               <p className="text-[9px] text-center mt-3 text-muted-foreground uppercase tracking-widest flex items-center justify-center gap-1">
-                <Sparkles className="w-2 h-2 text-primary" /> Powered by FutureForge GenKit
+                <Sparkles className="w-2 h-2 text-primary" /> Powered by INFISAHA GenKit
               </p>
             </div>
           </motion.div>

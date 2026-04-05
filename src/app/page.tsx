@@ -5,6 +5,8 @@ import { Services } from "@/components/sections/Services";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { ContactForm } from "@/components/sections/ContactForm";
+import { Founder } from "@/components/sections/Founder";
+import { Team } from "@/components/sections/Team";
 import { FloatingChatbot } from "@/components/FloatingChatbot";
 import { Toaster } from "@/components/ui/toaster";
 import { BrainCircuit } from "lucide-react";
@@ -20,19 +22,20 @@ export default function Home() {
               <BrainCircuit className="w-6 h-6 text-background" />
             </div>
             <span className="text-xl font-bold font-headline tracking-tighter">
-              FutureForge <span className="text-primary">AI</span>
+              INFISAHA <span className="text-primary">AI</span>
             </span>
           </div>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-muted-foreground">
             <a href="#" className="hover:text-primary transition-colors">Vision</a>
             <a href="#" className="hover:text-primary transition-colors">Solutions</a>
-            <a href="#" className="hover:text-primary transition-colors">Why Us</a>
-            <a href="#" className="hover:text-primary transition-colors">Case Studies</a>
+            <a href="#" className="hover:text-primary transition-colors">Founder</a>
+            <a href="#" className="hover:text-primary transition-colors">Team</a>
+            <a href="#" className="hover:text-primary transition-colors">Contact</a>
           </div>
 
           <button className="px-6 py-2 rounded-full border border-primary/50 text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-            Consultation
+            Book Demo
           </button>
         </div>
       </nav>
@@ -44,6 +47,8 @@ export default function Home() {
         <Services />
         <Portfolio />
         <WhyChooseUs />
+        <Founder />
+        <Team />
         <ContactForm />
       </main>
 
@@ -56,18 +61,19 @@ export default function Home() {
                 <BrainCircuit className="w-5 h-5 text-primary" />
               </div>
               <span className="text-lg font-bold font-headline tracking-tighter">
-                FutureForge <span className="text-primary">AI</span>
+                INFISAHA <span className="text-primary">AI</span>
               </span>
             </div>
             
-            <div className="text-sm text-muted-foreground">
-              © 2024 FutureForge AI Systems. All rights reserved.
+            <div className="text-sm text-muted-foreground text-center md:text-left">
+              © 2024 INFISAHA Systems. Infinite Support. Intelligent Systems.<br />
+              <span className="text-[10px] uppercase tracking-widest">Built with trust and reliability.</span>
             </div>
 
             <div className="flex gap-6">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Privacy</a>
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Terms</a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Twitter</a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">LinkedIn</a>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@
     {
       "id": "hero-bg",
       "description": "Futuristic abstract AI network background",
-      "imageUrl": "https://picsum.photos/seed/futureforge-hero/1920/1080",
+      "imageUrl": "https://picsum.photos/seed/infisaha-hero/1920/1080",
       "imageHint": "futuristic network"
     },
     {
@@ -24,6 +24,12 @@
       "description": "Visual representation of an automation workflow",
       "imageUrl": "https://picsum.photos/seed/automation-flow/600/400",
       "imageHint": "workflow automation"
+    },
+    {
+      "id": "founder-photo",
+      "description": "Professional photo of Raju Kumar",
+      "imageUrl": "https://picsum.photos/seed/raju-founder/800/1000",
+      "imageHint": "professional developer"
     }
   ]
 }

@@ -41,7 +41,7 @@ export const Hero = () => {
         >
           <Sparkles className="w-4 h-4 text-secondary animate-pulse" />
           <span className="text-xs font-medium tracking-wider uppercase text-secondary">
-            AI-Driven Future is Here
+            Infinite Support. Intelligent Systems.
           </span>
         </motion.div>
 
@@ -72,7 +72,7 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 2.2 }}
           className="max-w-2xl mx-auto mb-10 text-lg md:text-xl text-muted-foreground"
         >
-          We build intelligent systems that work for you 24/7, turning static processes into dynamic ROI-generating engines.
+          We build systems that work for you 24/7, turning static processes into dynamic ROI-generating engines.
         </motion.p>
 
         <motion.div 
@@ -86,7 +86,7 @@ export const Hero = () => {
             className="rounded-full px-8 h-12 text-base font-semibold transition-all hover:scale-105 bg-primary text-primary-foreground relative group overflow-hidden"
           >
             <span className="relative z-10 flex items-center gap-2">
-              Get Started
+              Book a Demo
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </span>
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
@@ -96,7 +96,7 @@ export const Hero = () => {
             variant="outline" 
             className="rounded-full px-8 h-12 text-base font-semibold glass border-white/10 hover:bg-white/5 transition-all hover:scale-105"
           >
-            Book Demo
+            Our Solutions
           </Button>
         </motion.div>
       </div>
