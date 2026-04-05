@@ -34,7 +34,7 @@ export const WhyChooseUs = () => {
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
       <div className="container px-4 mx-auto">
         <SectionReveal className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-headline">Why INFISAHA?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-headline">Why INFISAHAI?</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             We don't just deliver software; we deliver a partnership dedicated to your growth through technical excellence.
           </p>

@@ -14,7 +14,6 @@ import { AnimatedLogo } from "@/components/AnimatedLogo";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
         <div className="container px-4 mx-auto h-20 flex items-center justify-between">
           <AnimatedLogo showText size={45} />
@@ -36,7 +35,6 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Main Content */}
       <main className="flex-grow">
         <Hero />
         <AiShowcase />
@@ -48,14 +46,13 @@ export default function Home() {
         <ContactForm />
       </main>
 
-      {/* Footer */}
       <footer className="py-12 border-t border-white/5 bg-background relative overflow-hidden">
         <div className="container px-4 mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <AnimatedLogo showText size={35} />
             
             <div className="text-sm text-muted-foreground text-center md:text-left">
-              © 2024 INFISAHA. Infinite Support. Intelligent Systems.<br />
+              © 2024 INFISAHAI. Infinite Support. Intelligent Systems.<br />
               <span className="text-[10px] uppercase tracking-widest">Built with trust and reliability.</span>
             </div>
 
@@ -68,7 +65,6 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Floating Elements */}
       <FloatingChatbot />
       <Toaster />
     </div>

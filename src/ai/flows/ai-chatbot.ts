@@ -1,6 +1,7 @@
+
 'use server';
 /**
- * @fileOverview An advanced AI chatbot flow that provides information about INFISAHA's services and handles lead qualification.
+ * @fileOverview An advanced AI chatbot flow that provides information about INFISAHAI's services and handles lead qualification.
  */
 
 import {ai} from '@/ai/genkit';
@@ -8,13 +9,13 @@ import {z} from 'genkit';
 
 const AiChatbotInputSchema = z
   .object({
-    question: z.string().describe("The user's question about INFISAHA."),
+    question: z.string().describe("The user's question about INFISAHAI."),
     history: z.array(z.object({
       role: z.enum(['user', 'model']),
       content: z.string()
     })).optional().describe("Previous conversation history for context."),
   })
-  .describe("Input for the INFISAHA chatbot, containing the user's question and history.");
+  .describe("Input for the INFISAHAI chatbot, containing the user's question and history.");
 export type AiChatbotInput = z.infer<typeof AiChatbotInputSchema>;
 
 const AiChatbotOutputSchema = z
@@ -23,16 +24,16 @@ const AiChatbotOutputSchema = z
     requiresLeadCapture: z.boolean().optional().describe("Whether the AI believes a human expert should now step in."),
     suggestedAction: z.enum(['book_demo', 'contact_expert', 'view_portfolio', 'none']).optional().describe("A suggested next step for the user."),
   })
-  .describe("Output from the INFISAHA chatbot, containing the AI's response and structured metadata.");
+  .describe("Output from the INFISAHAI chatbot, containing the AI's response and structured metadata.");
 export type AiChatbotOutput = z.infer<typeof AiChatbotOutputSchema>;
 
 const prompt = ai.definePrompt({
-  name: 'infisahaChatbotPrompt',
+  name: 'infisahaiChatbotPrompt',
   input: {schema: AiChatbotInputSchema},
   output: {schema: AiChatbotOutputSchema},
-  system: `You are the INFISAHA Strategic Consultant, a premium AI assistant for a high-end AI implementation and automation firm.
+  system: `You are the INFISAHAI Strategic Consultant, a premium AI assistant for a high-end AI implementation and automation firm.
 
-INFISAHA represents: Infinite Support, Trust, and Reliability.
+INFISAHAI represents: Infinite Support, Trust, and Reliability.
 Founder: Raju Kumar (Software Engineer, MCA from NIT Jamshedpur).
 
 YOUR GOALS:
@@ -63,7 +64,7 @@ AI's answer:`,
 
 const aiChatbotFlow = ai.defineFlow(
   {
-    name: 'infisahaChatbotFlow',
+    name: 'infisahaiChatbotFlow',
     inputSchema: AiChatbotInputSchema,
     outputSchema: AiChatbotOutputSchema,
   },

@@ -3,7 +3,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'INFISAHA | Infinite Support. Intelligent Systems.',
+  title: 'INFISAHAI | Infinite Support. Intelligent Systems.',
   description: 'Transform your business from static to dynamic with AI-powered systems and modern automation.',
 };
 

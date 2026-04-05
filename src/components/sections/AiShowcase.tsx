@@ -41,7 +41,7 @@ export const AiShowcase = () => {
               <span className="text-secondary glow-mint">Efficiency through AI</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-              Static websites are a thing of the past. INFISAHA upgrades your digital presence into a proactive asset that communicates, analyzes, and executes without manual intervention.
+              Static websites are a thing of the past. INFISAHAI upgrades your digital presence into a proactive asset that communicates, analyzes, and executes without manual intervention.
             </p>
 
             <div className="grid gap-6">
@@ -74,7 +74,6 @@ export const AiShowcase = () => {
 
           <SectionReveal className="w-full lg:w-1/2 relative" direction="left">
             <div className="relative glass rounded-3xl p-4 overflow-hidden glow-border shadow-[0_0_50px_rgba(0,199,255,0.1)]">
-              {/* Fake Chatbot UI Preview */}
               <div className="bg-background/80 rounded-2xl border border-white/5 p-6 shadow-2xl">
                 <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/5">
                   <div className="flex items-center gap-3">
@@ -82,7 +81,7 @@ export const AiShowcase = () => {
                       <Bot className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h5 className="font-bold text-sm">INFISAHA Assistant</h5>
+                      <h5 className="font-bold text-sm">INFISAHAI</h5>
                       <span className="text-[10px] text-primary flex items-center gap-1">
                         <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
                         Active Now
@@ -136,7 +135,6 @@ export const AiShowcase = () => {
                 </div>
               </div>
 
-              {/* Automation Flow Visual Effect */}
               <motion.div 
                 animate={{ 
                   scale: [1, 1.5, 1],

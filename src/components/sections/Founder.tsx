@@ -22,7 +22,7 @@ export const Founder = () => {
                 <div className="aspect-[4/5] relative rounded-[2rem] overflow-hidden">
                   <Image 
                     src={founderImg?.imageUrl || "https://picsum.photos/seed/raju-kumar/600/750"} 
-                    alt="Raju Kumar - Founder of INFISAHA"
+                    alt="Raju Kumar - Founder of INFISAHAI"
                     fill
                     className="object-cover"
                     data-ai-hint="professional software engineer"
@@ -53,7 +53,7 @@ export const Founder = () => {
             <div className="relative mb-10">
               <Quote className="absolute -top-6 -left-6 w-12 h-12 text-primary/10 -z-10" />
               <p className="text-lg text-muted-foreground leading-relaxed italic">
-                "Raju Kumar is a passionate software developer and founder of INFISAHA, with a strong background in building scalable systems and modern web applications. With a Master's degree in Computer Applications from NIT Jamshedpur, he focuses on helping businesses transform through AI, automation, and reliable technology solutions."
+                "Raju Kumar is a passionate software developer and founder of INFISAHAI, with a strong background in building scalable systems and modern web applications. With a Master's degree in Computer Applications from NIT Jamshedpur, he focuses on helping businesses transform through AI, automation, and reliable technology solutions."
               </p>
             </div>
 

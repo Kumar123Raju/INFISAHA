@@ -102,7 +102,7 @@ export const AnimatedLogo = ({ className, size = 40, showText = false }: Animate
           className="flex flex-col"
         >
           <span className="text-xl font-bold font-headline tracking-tighter leading-none">
-            INFISAHA
+            INFISAHAI
           </span>
           <span className="text-[8px] uppercase tracking-[0.2em] text-muted-foreground font-bold">
             Infinite Support

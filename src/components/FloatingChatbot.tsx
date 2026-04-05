@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useRef, useEffect } from "react";
@@ -12,7 +13,6 @@ import {
   Sparkles, 
   Zap, 
   Calendar, 
-  UserPlus, 
   ChevronRight,
   Headphones
 } from "lucide-react";
@@ -33,7 +33,7 @@ const QUICK_ACTIONS = [
 export const FloatingChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: "bot", content: "Hi 👋 I'm your AI assistant from INFISAHA. How can I help upgrade your business with intelligent systems today?" }
+    { role: "bot", content: "Hi 👋 I'm INFISAHAI. How can I help upgrade your business with intelligent systems today?" }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -53,7 +53,6 @@ export const FloatingChatbot = () => {
 
     if (!textOverride) setInput("");
     
-    // Handle lead capture flow if active
     if (leadCaptureStep === 'name') {
       setLeadData(prev => ({ ...prev, name: userMsg }));
       setMessages(prev => [...prev, { role: "user", content: userMsg }]);
@@ -106,14 +105,13 @@ export const FloatingChatbot = () => {
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             className="w-[350px] sm:w-[420px] h-[600px] glass rounded-3xl flex flex-col shadow-2xl border-primary/20 mb-6 overflow-hidden ring-1 ring-white/10"
           >
-            {/* Header */}
             <div className="p-5 bg-gradient-to-r from-primary to-accent text-primary-foreground flex items-center justify-between shadow-lg">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center border border-white/30">
                   <Bot className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm tracking-tight">INFISAHA Strategic Assistant</h4>
+                  <h4 className="font-bold text-sm tracking-tight">INFISAHAI</h4>
                   <span className="text-[10px] opacity-90 flex items-center gap-1 font-medium">
                     <span className="w-2 h-2 bg-secondary rounded-full animate-pulse shadow-[0_0_8px_rgba(165,243,212,0.8)]"></span>
                     Infinite Support Active
@@ -128,7 +126,6 @@ export const FloatingChatbot = () => {
               </button>
             </div>
 
-            {/* Messages Area */}
             <div ref={scrollRef} className="flex-grow overflow-y-auto p-4 space-y-4 scrollbar-hide bg-background/40">
               {messages.map((msg, i) => (
                 <motion.div 
@@ -158,7 +155,6 @@ export const FloatingChatbot = () => {
               )}
             </div>
 
-            {/* Quick Actions */}
             <AnimatePresence>
               {!isLoading && messages.length < 5 && (
                 <motion.div 
@@ -181,14 +177,13 @@ export const FloatingChatbot = () => {
               )}
             </AnimatePresence>
 
-            {/* Input Area */}
             <div className="p-4 border-t border-white/5 bg-background/60 backdrop-blur-md">
               <div className="flex gap-2 relative">
                 <Input 
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                  placeholder={leadCaptureStep === 'name' ? "Enter your name..." : leadCaptureStep === 'phone' ? "Enter phone number..." : "Consult with INFISAHA..."} 
+                  placeholder={leadCaptureStep === 'name' ? "Enter your name..." : leadCaptureStep === 'phone' ? "Enter phone number..." : "Consult with INFISAHAI..."} 
                   className="bg-white/5 border-white/10 rounded-2xl h-12 pr-12 focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all"
                 />
                 <Button 
@@ -208,14 +203,12 @@ export const FloatingChatbot = () => {
         )}
       </AnimatePresence>
 
-      {/* Toggle Button */}
       <motion.button 
         onClick={() => setIsOpen(prev => !prev)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-[0_0_20px_rgba(0,199,255,0.4)] relative group overflow-hidden border border-white/20"
       >
-        {/* Breathing Pulse Effect */}
         <motion.div 
           animate={{ 
             scale: [1, 1.4, 1],
